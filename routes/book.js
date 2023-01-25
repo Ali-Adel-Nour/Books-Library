@@ -52,6 +52,7 @@ router.post("/",  async (req, res) => {
     pageCount: req.body.pageCount,
     description: req.body.description,
   })
+  
 saveCover(book,req.body.cover)
 
   try {
@@ -118,7 +119,7 @@ await book.save()
   
 }
 });
-//Delet Book Page
+//Delete Book Page
 router.delete('/:id',async(req,res) => {
 let book 
 try{
@@ -163,7 +164,7 @@ async function renderFormPage(res, book,form, hasError = false) {
       if(form === 'edit'){
       params.errorMessage="Error Updating Book"
       
-      res.render(`books/${form}`,params)
+     
       }else{
         params.errorMessage="Error creating Book"
       }
